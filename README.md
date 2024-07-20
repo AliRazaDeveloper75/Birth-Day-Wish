@@ -1,6 +1,6 @@
 # hpbirthday
 
-See live demo <a https://github.com/AliRazaDeveloper75/Birth-Day-Wish" target="_blanck">Here</a>
+See live demo <a https://alirazadeveloper75.github.io/Birth-Day-Wish/" target="_blanck">Here</a>
 
 ## change the name of reciever
 
