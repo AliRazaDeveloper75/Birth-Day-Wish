@@ -222,7 +222,9 @@
 
 </head>
 <body>
-<audio class="birthSong" src="birthday.mp3" type="audio/mpeg"></audio>
+	<audio class="birthSong" src="birthday.mp3" type="audio/mpeg"></audio>
+
+	
 <div class="container">
 	
 	<div class="cInner" >
@@ -291,7 +293,7 @@ ballonContainer.insertAdjacentHTML("beforeend",ballonCode)
 // From
 
 if(from===null){
-from='Miss Sana'
+from='Sana Mahmood'
 }
 
 document.querySelector(".speaker").innerHTML=`-${from}`
@@ -370,5 +372,11 @@ window.addEventListener("click",(e)=>{
 	)
 })
 
+
+	  document.addEventListener("DOMContentLoaded", () => {
+		const audioElement = document.querySelector('.birthSong');
+		audioElement.muted = true;
+	  });
+	
 </script>
 </html>
