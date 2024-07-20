@@ -76,6 +76,10 @@
 	z-index:-1;
 	}
 	
+	.flipped {
+  transform: rotateY(180deg) !important;
+}
+
 	
 	
 	.cFront , .cBack{
@@ -122,19 +126,28 @@
 		font-family: 'Lobster', cursive;
 	}
 	
-	.cInner {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		text-align: center;
-		transition: transform 0.8s;
-		transform-style: preserve-3d;
-		}
-		
-		/* Do an horizontal flip when you move the mouse over the flip box container */
-		.cInner:hover{
-		transform: rotateY(180deg);
-		}
+	/* Default styles */
+.cInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do a horizontal flip when hovered over */
+.cInner:hover {
+  transform: rotateY(180deg);
+}
+
+/* Remove hover effect for mobile */
+@media (max-width: 768px) {
+  .cInner:hover {
+    transform: none;
+  }
+}
+
 		
 		
 	.fadein{
@@ -227,7 +240,7 @@
 	
 <div class="container">
 	
-	<div class="cInner" >
+	<div class="cInner" id="flipBox">
 		<div class="cFront">
 			<img src="./images/bdb.jpg" alt="Prarik Khuntia" class="fullImg">
 			<img src="./images/border.png" class="inAnim abcd fullImg" effect="zoomin" delay="1" duration="0.9">
@@ -377,6 +390,15 @@ window.addEventListener("click",(e)=>{
 		const audioElement = document.querySelector('.birthSong');
 		audioElement.muted = true;
 	  });
+
+	  document.addEventListener("DOMContentLoaded", function() {
+  const flipBox = document.getElementById("flipBox");
+
+  flipBox.addEventListener("click", function() {
+    this.classList.toggle("flipped");
+  });
+});
+
 	
 </script>
 </html>
